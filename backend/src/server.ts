@@ -1,10 +1,11 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.get('/', (req, res) => {
-  return res.json({ message: 'Rota funcionando' });
-});
+app.use(express.json());
+
+app.use(routes);
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Aplicação rodando na porta ${PORT}`));
