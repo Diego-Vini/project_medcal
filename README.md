@@ -1,7 +1,7 @@
 <h1 align="center">Projeto MedCal - Backend</h1>
 
 ## Descrição do projeto
-<p align="center">Projeto MedCal é uma aplicação desenvolvida com intuito de facilitar o processo de agendamento de pacientes em clinicas médicas.</p>
+<p>Projeto MedCal é uma aplicação desenvolvida com intuito de facilitar o processo de agendamento de pacientes em clinicas médicas.</p>
 
 #Status do projeto
 <h4 align="center"> 
