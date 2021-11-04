@@ -3,6 +3,12 @@
 ## Descrição do projeto
 <p>Projeto MedCal é uma aplicação desenvolvida com intuito de facilitar o processo de agendamento de pacientes em clinicas médicas.</p>
 
+## Documentos Abertura do Projeto
+<p> Pasta que contem um termo de abertura do projeto com uma breve descrição de como a aplicação deve ser desenvolvida, um desenho do banco de dados e um arquivo com as tabelas do banco de dados e seus devidos campos respeitando a 3ª forma normal.</p>
+
+## Script sql
+<p>Contem um script sql com a primeira versão da estrutura do banco de dados.</p>
+
 #Status do projeto
 <h4 align="center"> 
 	🚧  Node & Typescript 🚀 Em construção...  🚧
