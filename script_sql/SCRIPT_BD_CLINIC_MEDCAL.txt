@@ -1,0 +1,77 @@
+CREATE DATABASE IF NOT EXISTS bd_clinic;
+
+USE bd_clinic;
+
+CREATE TABLE tb_patients (
+  id_patient INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  name_patient VARCHAR(100) NOT NULL,
+  birth_date_patient DATE NOT NULL,
+  address_patient VARCHAR(100) NOT NULL,
+  number_address_patient VARCHAR(20) NOT NULL,
+  district_address_patient VARCHAR(50) NOT NULL,
+  cep_patient VARCHAR(10),
+  city_patient VARCHAR(50) NOT NULL,
+  state_patient VARCHAR(2) NOT NULL,
+  genre_patient VARCHAR(15) NOT NULL,
+  fone_patient BIGINT(14),
+  email_patient VARCHAR(100)  
+)ENGINE = InnoDB;
+
+CREATE TABLE tb_covenants (
+  id_covenant INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  description_covenant varchar(50) NOT NULL
+)ENGINE = InnoDB;
+
+CREATE TABLE tb_doctors (
+  id_doctor INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  name_doctor VARCHAR(100) NOT NULL,
+  crm_doctor VARCHAR(15)
+)ENGINE = InnoDB;
+
+CREATE TABLE tb_specialties (
+  id_specialty INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  description_specialty VARCHAR(50)
+)ENGINE = InnoDB;
+
+CREATE TABLE tb_status_schedules (
+  id_status_schedule INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  description_status_schedule VARCHAR(30)
+)ENGINE = InnoDB;
+
+CREATE TABLE tb_schedules (
+  id_schedule INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  data_schedule DATE,
+  scheduling_time time,
+  id_patient INT NOT NULL,
+  id_doctor INT NOT NULL,
+  id_specialty INT NOT NULL,
+  id_covenant INT NOT NULL,
+  id_status_schedule INT NOT NULL,
+  FOREIGN KEY (id_patient) REFERENCES tb_patients(id_patient),
+  FOREIGN KEY (id_doctor) REFERENCES tb_doctors(id_doctor),
+  FOREIGN KEY (id_specialty) REFERENCES tb_specialties(id_specialty),
+  FOREIGN KEY (id_covenant) REFERENCES tb_covenants(id_covenant),
+  FOREIGN KEY (id_status_schedule) REFERENCES tb_status_schedules(id_status_schedule)
+) ENGINE = InnoDB;
+
+INSERT INTO tb_specialties(description_specialty)
+VALUE
+  ('CLINICO GERAL'),
+  ('CARDIOLOGIA'),
+  ('NEUROLOGISTA')
+;
+
+INSERT INTO tb_status_schedules(description_status_schedule)
+VALUE 
+  ('PENDENTE'),
+  ('EXECUTADO'),
+  ('CANCELADO')
+;
+
+INSERT INTO tb_covenants(description_covenant)
+VALUE
+  ('PARTICULAR'),
+  ('UNIMED'),
+  ('HYGIA')
+;
+
